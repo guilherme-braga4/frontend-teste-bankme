@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
       error => {console.log("Algo deu errado " + error)},
       () => {console.log("aaaa")}
     )
+    //cadastrar = false ----> Mudar para a o Form de Login após efetuar o Cadastro
+    this.cadastrar = false
   }
 
   showLoginForm() {

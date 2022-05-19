@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../login/auth.service'
 import { Cadastro } from '../login/user'
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -17,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   public bankMer: Cadastro = new Cadastro();
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.getBankMers()
@@ -45,13 +47,17 @@ export class DashboardComponent implements OnInit {
   //   console.log("dentro do updateBankMer")
   // }
 
-  deleteBankMer () {
+  deleteBankMer (id: string) {
     console.log("dentro do deleteBankMer")
-    this.apiService.deleteUsers('1').subscribe
+    this.apiService.deleteUsers(id).subscribe
     (
         sucess => {console.log("Usuário Deletado " + sucess)},
         error => {console.log("Algo deu errado " + error)},
       )
+  }
+
+  handleExit() {
+    this.router.navigate([''])
   }
 
 }
