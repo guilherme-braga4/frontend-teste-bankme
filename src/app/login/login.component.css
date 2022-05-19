@@ -30,11 +30,32 @@
   flex-direction: column;
 }
 
+@media only screen and (max-width: 750px) {
+  .background-container {
+    width: 0%;
+    height: 0%;
+    /* background-color: pink; */
+  }
+
+  .form-container {
+    /* background-color: rgb(148, 148, 148); */
+    width: 100%;
+  }
+}
+
 .form-container h1 {
   font-family: Poppins;
   font-size: 20px;
   color: #2179b5;
   margin: 50px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1050px) {
+  .form-container h1 {
+    font-size: 18px;
+    margin: 25px;
+  }
 }
 
 .sub-container-label-input {
@@ -58,6 +79,12 @@
   border-color: #dbdbdb;
 }
 
+@media only screen and (max-width: 500px) {
+  .form-container input {
+    margin-right: 20px;
+  }
+}
+
 .form-container p {
   font-family: Poppins;
   font-size: 12px;
@@ -70,7 +97,7 @@
   /* background-color: red; */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
   padding: 50px 50px;
 }
@@ -95,6 +122,35 @@
   border-radius: 30px;
   cursor: pointer;
   border: none
+}
+
+@media only screen and (min-width: 1200px) {
+  .sub-container-form-buttons {
+    padding: 0;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1200px) {
+  .sub-container-form-buttons {
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .button-login {
+    width: 120px;
+  }
+
+  .button-cadastro {
+    width: 150px;
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+  .button-cadastro {
+    margin-right: 20px;
+  }
 }
 
 .button-cadastro:hover {
