@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
 }
+
 .container {
   height: 100%;
   display: flex;
@@ -92,6 +93,7 @@ table td {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin: 20px;
   flex-direction: row;
 }
@@ -126,4 +128,155 @@ table td {
   border-radius: 30px;
   cursor: pointer;
   border: none
+}
+
+.sub-container-label-input {
+  /* background-color: red; */
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .create-user-container input {
+    width: 90%;
+  }
+
+  .create-user-container button {
+    width: 160px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .create-user-container input {
+    width: 80%;
+  }
+
+  .create-user-container button {
+    width: 140px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .create-user-container input {
+    width: 65%;
+    font-size: 14px;
+
+  }
+
+  .create-user-container button {
+    width: 120px;
+    font-size: 12px;
+  }
+
+  table  {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .create-user-container {
+    flex-direction: column;
+    /* background-color: red; */
+    margin-top: 0;
+    padding-bottom: 10px;
+  }
+
+  .container h1 {
+    font-size: 34px;
+  }
+
+  .container p {
+    font-size: 16px;
+  }
+
+  .create-user-container input {
+    width: 70%;
+  }
+
+  .create-user-container button {
+    width: 160px;
+    font-size: 14px;
+  }
+
+  .sub-container-label-input {
+    padding: 10px;
+  }
+
+  .sub-container-form-buttons {
+    padding: 20px;
+  }
+
+  table  {
+    font-size: 14px;
+    margin-left: 10px;
+    justify-content: center;
+  }
+
+  table th {
+    background-color: #0078ff;
+    color: #fff;
+    font-size: 16px;
+    overflow: auto;
+    border: none;
+    padding: 10px;
+  }
+  
+  table td {
+    border: none;
+    padding: 4px 4px 4px 0px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+
+  table  {
+    font-size: 14px;
+    margin-left: 60px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  table th {
+    background-color: #0078ff;
+    color: #fff;
+    font-size: 16px;
+    overflow: auto;
+    border: none;
+    /* padding: 10px; */
+  }
+  
+  table td {
+    border: none;
+    padding: 4px 4px 4px 0px;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+
+  table  {
+    font-size: 14px;
+    margin-left: 140px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  table th {
+    background-color: #0078ff;
+    color: #fff;
+    font-size: 16px;
+    overflow: auto;
+    border: none;
+    /* padding: 10px; */
+  }
+  
+  table td {
+    border: none;
+    padding-left: 10px;
+  }
 }
