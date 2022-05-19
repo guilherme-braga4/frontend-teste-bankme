@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+===================================================//===================================================
+Breve explicação sobre o projeto:
+
+•	Login Mockado, portanto, utilizar:
+Email: luiz@bankme.com	
+Senha: 123
+
+•	Estilização realizada através de CSS, com Media Queries para Responsividade
+Aplicação de conceitos Flex-Box
+
+•	Utilização de Masks Input para proteger os Inputs 
+Biblioteca: Angular Imask
+
+•	Componente de Login dinâmico através da Diretiva NgIf
+
+•	Dashboard construído com Angular Material Table
+Ações: Listagem, Exclusão e Adição.
+
+•	MockApi utilizada como a API que recebe as Requisições HTTP
+
