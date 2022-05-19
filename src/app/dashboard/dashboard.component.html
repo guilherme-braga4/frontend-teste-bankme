@@ -8,8 +8,25 @@
   </div>
   <h1>Dashboard Bankmers</h1>
   <p>A primeira fintech que cria e opera mini bancos!</p>
+    <form class="create-user-container">
+      <div class="sub-container-label-input">
+        <label>Nome</label>
+        <input [(ngModel)]="bankMer.name" name="text" matInput type="text" placeholder="Nome e Sobrenome"/>
+      </div>
+      <div class="sub-container-label-input">
+        <label>Email</label>
+        <input [imask]="emailMask" [(ngModel)]="bankMer.email" name="email" matInput type="email" placeholder="exemplo@email.com"/>
+      </div>
+      <div class="sub-container-label-input">
+        <label>Telefone</label>
+        <input [(ngModel)]="bankMer.telefone" name="telefone"  matInput type="tel"  placeholder="(DDD)999999999" [imask]="phoneMask"/>
+      </div>
+      <div class="sub-container-form-buttons">
+        <button class="button-cadastro"(click)="signUpDashboard()">Cadastrar Bankmer</button>
+      </div>
+    </form>
   <!-- <button mat-raised-button color="primary">Primary</button> -->
-  <table mat-table [dataSource]="users">
+  <table mat-table #table [dataSource]="users">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> Id </th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
@@ -44,29 +61,3 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
-
-<!-- <div class="form-container">
-  <h1>Preencha os Campos abaixo e torne-se um Bankmer!</h1>
-  <form>
-    <div class="sub-container-label-input">
-      <label>Nome Completo</label>
-      <input [(ngModel)]="bankMer.nome" name="email" type="text"/>
-    </div>
-    <div class="sub-container-label-input">
-      <label>Email</label>
-      <input [(ngModel)]="bankMer.email" name="senha" type="text"/>
-    </div>
-    <div class="sub-container-label-input">
-      <label>CPF</label>
-      <input [(ngModel)]="bankMer.telefone" name="cpf" type="number"/>
-    </div>
-    <div class="sub-container-label-input">
-      <label>Senha</label>
-      <input [(ngModel)]="bankMer.senha" name="senha" type="text"/>
-    </div>
-    <div class="sub-container-form-buttons">
-      <button class="button-login">Voltar para o Login</button>
-      <button class="button-cadastro"(click)="deleteBankMer()">Apagar o Bankmer</button>
-    </div>
-  </form>
-</div> -->

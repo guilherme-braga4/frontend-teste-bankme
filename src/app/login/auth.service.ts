@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { Usuario, Cadastro } from './user'
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -14,11 +14,11 @@ export class AuthService {
   constructor(private router: Router) { }
 
   // ------->>>> Verificação de Login e Cadastro
-  private usuarioAutenticado: boolean = false
+  public usuarioAutenticado: boolean = false
 
   //Verificar os dados do usuário através da Classe Usuario
   loginVerify (usuario: Usuario) {
-    if (usuario.email == "bankme@bankme.com" && usuario.senha == "123") {
+    if (usuario.email == "luiz@bankme.com" && usuario.senha == "123") {
       this.usuarioAutenticado = true
       this.router.navigate(['/home'])
       alert("Login Efetuado com Sucesso!")
@@ -30,7 +30,7 @@ export class AuthService {
   }
 
   signUpVerify (cadastro: Cadastro) {
-    if (cadastro.nome == undefined || cadastro.email == undefined || cadastro.telefone == undefined || cadastro.senha == undefined) {
+    if (cadastro.name == undefined || cadastro.email == undefined || cadastro.telefone == undefined || cadastro.senha == undefined) {
       alert("Ops, algo deu errado durante o cadastro")
     }
     else { 

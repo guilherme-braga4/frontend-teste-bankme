@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService, ApiService } from './auth.service'
 import { Usuario, Cadastro } from './user'
-import { Observable } from 'rxjs'
+import IMask from 'imask';
 
 @Component({
   selector: 'app-login',
@@ -18,11 +18,14 @@ export class LoginComponent implements OnInit {
     console.log("dentro do handleSubmit", this.usuario)
     // this.mensagemBoolean = true
     this.authService.loginVerify(this.usuario)
+    //localStorage
+    localStorage.setItem('sessão Login', JSON.stringify(this.usuario.email))
   }
 
   //Cadastro
   handleSignUp() {
     console.log("dentro do handleSignUp")
+    if (this.cadastro.name !== undefined && this.cadastro.email !== undefined && this.cadastro.telefone !== undefined && this.cadastro.senha !== undefined) {
     this.authService.signUpVerify(this.cadastro)
     this.apiService.createUsers(this.cadastro)
     .subscribe
@@ -33,6 +36,12 @@ export class LoginComponent implements OnInit {
     )
     //cadastrar = false ----> Mudar para a o Form de Login após efetuar o Cadastro
     this.cadastrar = false
+    //localStorage
+    localStorage.setItem('sessão Cadastro', JSON.stringify(this.cadastro.name))
+    }
+    else {
+      alert("Preencha Corretamente os Campos de Cadastro")
+    }
   }
 
   showLoginForm() {
@@ -63,5 +72,12 @@ export class LoginComponent implements OnInit {
   getUsers () {
     this.apiService.getUsers().subscribe(data => this.users = data)
   }
+
+  //--------->>> masks
+  phoneMask = { mask: "(00)000000000" };
+  emailMask = {
+    mask: /^\S*@?\S*$/
+  };
+  //--------->>> masks
 
 }

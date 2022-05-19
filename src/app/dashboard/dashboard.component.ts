@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
+import { MatTable } from '@angular/material/table';
+import { Router } from '@angular/router';
+import IMask from 'imask';
+
 import { ApiService } from '../login/auth.service'
 import { Cadastro } from '../login/user'
-import { Router } from '@angular/router';
-
 
 
 @Component({
@@ -13,10 +15,14 @@ import { Router } from '@angular/router';
 
 export class DashboardComponent implements OnInit {
 
-  //Table Columns
-  displayedColumns: string[] = ['id', 'name', 'email', 'telefone', 'actions'];
-  //------>>
+  users: Array<any> = [];
 
+  //Table Configs
+  @ViewChild(MatTable) 
+  //variável que permite Re-Renderizar após alguma alteração
+  table!: MatTable<any>;
+  displayedColumns: string[] = ['id', 'name', 'email', 'telefone', 'actions'];
+  
   public bankMer: Cadastro = new Cadastro();
 
   constructor(private apiService: ApiService, private router: Router) { }
@@ -25,39 +31,44 @@ export class DashboardComponent implements OnInit {
     this.getBankMers()
   }
 
-  users: Array<any> = [];
 
   getBankMers () {
     this.apiService.getUsers().subscribe(data => this.users = data)
     console.log("users", this.users)
   }
 
-  createBankMer () {
+  deleteBankMer (id: string) {
+    console.log("dentro do deleteBankMer")
+    this.apiService.deleteUsers(id).subscribe(result => {
+    setTimeout(() => {window.location.reload()}, 100)
+    })
+  }
+
+  signUpDashboard () {
+    if (this.bankMer.name !== undefined && this.bankMer.email !== undefined && this.bankMer.telefone !== undefined) {
     console.log("dentro do createBankMer")
     this.apiService.createUsers(this.bankMer)
     .subscribe
   (
       sucess => {console.log("Usuário criado " + sucess)},
       error => {console.log("Algo deu errado " + error)},
-      () => {console.log("aaaa")}
     )
+    setTimeout(() => {window.location.reload()}, 500)
   }
-
-  // updateBankMer() {
-  //   console.log("dentro do updateBankMer")
-  // }
-
-  deleteBankMer (id: string) {
-    console.log("dentro do deleteBankMer")
-    this.apiService.deleteUsers(id).subscribe
-    (
-        sucess => {console.log("Usuário Deletado " + sucess)},
-        error => {console.log("Algo deu errado " + error)},
-      )
+  else {
+    alert("Preencha Corretamente os Campos de Cadastro")
+  }
   }
 
   handleExit() {
     this.router.navigate([''])
   }
+  
+  //--------->>> masks
+  phoneMask = { mask: "(00)000000000" };
+  emailMask = {
+    mask: /^\S*@?\S*$/
+  };
+  //--------->>> masks
 
 }

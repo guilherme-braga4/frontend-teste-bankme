@@ -7,11 +7,11 @@
     <form>
       <div class="sub-container-label-input">
         <label>Email</label>
-        <input [(ngModel)]="usuario.email" name="email" type="text"/>
+        <input [(ngModel)]="usuario.email" name="email" matInput type="email" placeholder="Digite o seu e-mail"/>
       </div>
       <div class="sub-container-label-input">
         <label>Senha</label>
-        <input [(ngModel)]="usuario.senha" name="senha" type="text"/>
+        <input [(ngModel)]="usuario.senha" name="senha" matInput type="password" placeholder="Digite a sua senha"/>
       </div>
       <p *ngIf='mensagemBoolean == true' class="alert-login-sucess">{{ mensagem }}</p>
       <!-- <p>Novo(a) por aqui?</p> -->
@@ -27,19 +27,19 @@
       <form onsubmit="handleSubmit()">
         <div class="sub-container-label-input">
           <label>Nome Completo</label>
-          <input [(ngModel)]="cadastro.nome" name="email" type="text"/>
+          <input [(ngModel)]="cadastro.name" name="nome" matInput type="text" placeholder="Nome e Sobrenome"/>
         </div>
         <div class="sub-container-label-input">
           <label>Email</label>
-          <input [(ngModel)]="cadastro.email" name="senha" type="text"/>
+          <input [(ngModel)]="cadastro.email" name="email" matInput type="email" placeholder="exemplo@email.com" [imask]="emailMask"/>
         </div>
         <div class="sub-container-label-input">
           <label>Telefone</label>
-          <input [(ngModel)]="cadastro.telefone" name="cpf" type="number"/>
+          <input [(ngModel)]="cadastro.telefone" name="telefone" matInput type="tel" placeholder="(DDD)999999999" [imask]="phoneMask"/>
         </div>
         <div class="sub-container-label-input">
           <label>Senha</label>
-          <input [(ngModel)]="cadastro.senha" name="senha" type="text"/>
+          <input [(ngModel)]="cadastro.senha" name="senha" matInput type="text" placeholder="Lembre-se de usar uma senha forte"/>
         </div>
         <!-- <p>Novo(a) por aqui?</p> -->
         <div class="sub-container-form-buttons">

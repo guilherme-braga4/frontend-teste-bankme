@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app.routing'
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table'  
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input'; 
+import { IMaskModule } from 'angular-imask';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,7 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
+    DashboardComponent, 
   ],
   imports: [
     BrowserModule, 
@@ -27,7 +31,10 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule, 
     MatTableModule, 
     MatIconModule, 
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    IMaskModule
   ],
   providers: [AuthService, ApiService],
   bootstrap: [AppComponent]

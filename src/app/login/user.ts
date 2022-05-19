@@ -4,7 +4,7 @@ export class Usuario {
 }
 
 export class Cadastro {
-  nome!: string;
+  name!: string;
   telefone!: number;
   email!: string;
   senha!: string;
