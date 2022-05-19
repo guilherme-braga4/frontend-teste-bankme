@@ -1,0 +1,51 @@
+* { 
+  padding: 0;
+  margin: 0;
+}
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0078ff
+}
+
+.container h1 {
+  font-family: Poppins;
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 50px;
+}
+
+.container p {
+  font-family: Poppins;
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+table {
+  width: 90%;
+  font-family: Poppins;
+  background-color: #fff;
+  box-shadow: 2px 2px 3px 3px rgb(51, 51, 51);
+  border: none;
+
+}
+
+table th {
+  background-color: #0078ff;
+  color: #fff;
+  font-size: 18px;
+}
+
+.button-delete-icon {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.delete-icon {
+  color: #0078ff
+}

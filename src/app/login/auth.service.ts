@@ -30,12 +30,11 @@ export class AuthService {
   }
 
   signUpVerify (cadastro: Cadastro) {
-    if (cadastro.nome != "" && cadastro.email != "" && cadastro.senha != "") {
-      this.router.navigate([''])
-      alert("Cadastro Efetuado")
+    if (cadastro.nome == undefined || cadastro.email == undefined || cadastro.telefone == undefined || cadastro.senha == undefined) {
+      alert("Ops, algo deu errado durante o cadastro")
     }
     else { 
-      alert("Ops, algo deu errado durante o cadastro")
+      alert("Cadastro Efetuado com Sucesso")
     }
   }
 }
@@ -51,14 +50,20 @@ export class ApiService {
   //declare API adress 
   api = 'https://6285661ff0e8f0bb7c03659c.mockapi.io//users_bankme'
   
-  //call API (GET)
   getUsers() {
     return this.http.get<any[]>(`${this.api}`)
   }
 
-  //call API (POST)
   createUsers(cadastro: Cadastro)  {
     return this.http.post(this.api, cadastro)
   }
+
+  deleteUsers(id: string) {
+    return this.http.delete(`${this.api}/${id}`)
+  }
+
+  // updateUsers(cadastro: Cadastro)  {
+  //   return this.http.put(this.api, cadastro)
+  // }
 
 }
