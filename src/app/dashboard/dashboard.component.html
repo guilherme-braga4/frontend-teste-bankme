@@ -1,0 +1,33 @@
+<p>dashboard works!</p>
+<!-- Iteração dos Usuários -->
+<div *ngFor="let user of users">{{user.id}}</div>
+<div *ngFor="let user of users">{{user.name}}</div>
+<div *ngFor="let user of users">{{user.email}}</div>
+<div *ngFor="let user of users">{{user.telefone}}</div>
+
+<div class="form-container">
+  <h1>Preencha os Campos abaixo e torne-se um Bankmer!</h1>
+  <form>
+    <div class="sub-container-label-input">
+      <label>Nome Completo</label>
+      <input [(ngModel)]="cadastro.nome" name="email" type="text"/>
+    </div>
+    <div class="sub-container-label-input">
+      <label>Email</label>
+      <input [(ngModel)]="cadastro.email" name="senha" type="text"/>
+    </div>
+    <div class="sub-container-label-input">
+      <label>CPF</label>
+      <input [(ngModel)]="cadastro.telefone" name="cpf" type="number"/>
+    </div>
+    <div class="sub-container-label-input">
+      <label>Senha</label>
+      <input [(ngModel)]="cadastro.senha" name="senha" type="text"/>
+    </div>
+    <!-- <p>Novo(a) por aqui?</p> -->
+    <div class="sub-container-form-buttons">
+      <!-- <button class="button-login" (click)="showLoginForm()">Voltar para o Login</button>
+      <button class="button-cadastro"(click)="handleSignUp()">Efetuar Cadastro</button> -->
+    </div>
+  </form>
+</div>
