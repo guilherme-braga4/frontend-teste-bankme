@@ -6,6 +6,7 @@
 .container {
   /* background-color: red; */
   display: flex;
+  max-width: 100%;
 }
 
 .background-container {
@@ -23,14 +24,14 @@
   /* background-color: cyan; */
   height: 100vh;
   width: 30%;
-  margin: 20px;
   display: flex;
+  padding: 2rem;
   /* justify-content: center; */
   /* align-items: center; */
   flex-direction: column;
 }
 
-@media only screen and (max-width: 750px) {
+@media (max-width: 750px) {
   .background-container {
     width: 0%;
     height: 0%;
@@ -51,7 +52,7 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 1050px) {
+@media (max-width: 1050px) {
   .form-container h1 {
     font-size: 18px;
     margin: 25px;
@@ -79,7 +80,7 @@
   border-color: #dbdbdb;
 }
 
-@media only screen and (max-width: 500px) {
+@media (max-width: 500px) {
   .form-container input {
     margin-right: 20px;
   }
@@ -98,8 +99,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-direction: row;
-  padding: 50px 50px;
+  margin: 3rem;
 }
 
 .button-login {
@@ -110,7 +110,8 @@
   height: 40px;
   border-radius: 20px;
   cursor: pointer;
-  border: none
+  border: none;
+  margin: 0px 0.5rem;
 }
 
 .button-cadastro {
@@ -121,20 +122,36 @@
   height: 40px;
   border-radius: 30px;
   cursor: pointer;
-  border: none
+  border: none;
+  margin: 0px 0.5rem;
 }
 
-@media only screen and (min-width: 1200px) {
+@media (max-width: 1260px) {
   .sub-container-form-buttons {
-    padding: 0;
+    /* background-color: red; */
     justify-content: space-around;
+    display: flex;
+    width: 100%;
+    margin: 0
+    /* padding: 0px 3rem; */
+  }
+
+  .button-login {
+    width: 100px;
+    margin: 0px 1.5rem;
+  }
+
+  .button-cadastro {
+    width: 100px;
+    margin: 0px 1.5rem;
   }
 }
 
-@media only screen and (min-width: 750px) and (max-width: 1200px) {
+@media (max-width: 750px) {
   .sub-container-form-buttons {
     padding: 0;
-    justify-content: space-between;
+    justify-content: space-around;
+    /* background-color: yellow; */
   }
 
   .button-login {
@@ -147,7 +164,7 @@
   
 }
 
-@media only screen and (max-width: 500px) {
+@media (max-width: 500px) {
   .button-cadastro {
     margin-right: 20px;
   }

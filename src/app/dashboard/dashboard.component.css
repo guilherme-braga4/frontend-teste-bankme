@@ -11,6 +11,7 @@
   align-items: center;
   background-color: #0078ff;
   overflow: auto;
+  max-width: 100%;
 }
 
 .container h1 {
@@ -47,6 +48,7 @@ table th {
 
 table td {
   border: none;
+  color: black;
 }
 
 .container-icon {
@@ -138,7 +140,7 @@ table td {
   justify-content: center;
 }
 
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .create-user-container input {
     width: 90%;
   }
@@ -149,7 +151,7 @@ table td {
   }
 }
 
-@media only screen and (max-width: 1050px) {
+@media (max-width: 1050px) {
   .create-user-container input {
     width: 80%;
   }
@@ -160,7 +162,7 @@ table td {
   }
 }
 
-@media only screen and (max-width: 950px) {
+@media (max-width: 950px) {
   .create-user-container input {
     width: 65%;
     font-size: 14px;
@@ -177,7 +179,7 @@ table td {
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media (max-width: 750px) {
   .create-user-container {
     flex-direction: column;
     /* background-color: red; */
@@ -231,7 +233,7 @@ table td {
   }
 }
 
-@media only screen and (max-width: 540px) {
+@media (max-width: 540px) {
 
   table  {
     font-size: 14px;
@@ -256,7 +258,7 @@ table td {
   }
 }
 
-@media only screen and (max-width: 475px) {
+@media (max-width: 475px) {
 
   table  {
     font-size: 14px;
