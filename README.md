@@ -29,6 +29,8 @@ Esse projeto foi realizado com a versão 13.3.5 do Angular [Angular CLI](https:/
 
 ## Clonando do Repositório e Rodando a Aplicação Localmente
 
-git clone https://github.com/guilherme-braga4/frontend-teste-bankme.git
-npm install ou yarn install
-ng serve (O app rodará no endereço local porta 4200 /(http://localhost:4200/))
+Clonando o Repo - git clone https://github.com/guilherme-braga4/frontend-teste-bankme.git
+
+Instalando Dependências - npm install ou yarn install
+
+Ligando o App - ng serve ou npm start(O app rodará no endereço local porta 4200 /(http://localhost:4200/))
