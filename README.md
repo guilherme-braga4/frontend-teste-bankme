@@ -1,5 +1,12 @@
 # FrontEndTestBankme: Teste desenvolvido para o processo seletivo Front-End Software Developer da empresa Bankme.
 
+Tela de Login/Cadastro:
+![angular1](https://user-images.githubusercontent.com/90586912/172059583-09dc1090-766f-49a7-956e-7070bfcd1ae2.png)
+
+Tela do CRUD:
+![angular2](https://user-images.githubusercontent.com/90586912/172059600-f1ba978d-9b61-492e-986c-042df46165ab.png)
+
+
 ========================//=======================
 ========================//=======================
 
